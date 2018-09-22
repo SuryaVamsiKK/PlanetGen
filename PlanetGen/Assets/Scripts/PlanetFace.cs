@@ -30,9 +30,9 @@ public class PlanetFace
 
     public void ConstructMesh()
     {
-        temp_Resolution = (resolution - 1) / 2;
-        temp_Resolution += 1;
-        //temp_Resolution = resolution; // for full
+        //temp_Resolution = (resolution - 1) / 2; 
+        //temp_Resolution += 1;
+        temp_Resolution = resolution; // for full
         Vector3[] vertices = new Vector3[temp_Resolution * temp_Resolution];
         int[] triangles = new int[(temp_Resolution - 1) * (temp_Resolution - 1) * 6];
 
@@ -67,9 +67,10 @@ public class PlanetFace
         mesh.triangles = triangles;
         mesh.RecalculateNormals();
         //MeshHelper.Subdivide(mesh);
-       //recalculateVerts();
+        //recalculateVerts();
     }
 
+    //for sumbdividing mesh
     void recalculateVerts()
     {
         Vector3[] vertss = mesh.vertices;
